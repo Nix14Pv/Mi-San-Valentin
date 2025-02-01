@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Serás mi San Valentín?</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+      overflow: hidden;
+    }
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #e63946;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    button {
+      background-color: #e63946;
+      color: white;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background-color: #d62828;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .image-container {
+      margin-bottom: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+    .tulips {
+      width: 150px;
+      margin-top: 20px;
+    }
+    .no-response-image {
+      width: 150px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="image-container">
+      <img src="imagen inicio.png" alt="entreda de ramo :3" width="200">
+    </div>
+    <h1>❤️ ¿Quieres ser mi San Valentín? ❤️</h1>
+    <p>Eres la mujer que amo a pesar que te molestes conmigo cada 3 segundos JAJAJAJ 
+        en verdad te amo y me encantaría compartir este día contigo ya que quiero pasar este dia con la mujer 
+        que es especial para mi y la cual amo, te amo. ❤️</p>
+    <div class="button-container">
+      <button onclick="showYesResponse()">¡Sí! 🌹</button>
+      <button onclick="showNoResponse()">No 😢</button>
+    </div>
+    <div id="response-message" class="hidden"></div>
+    <img id="tulips" class="hidden tulips" src="Imagen si.png" alt="Corazón bonis">
+    <img id="no-response-image" class="hidden no-response-image" src="tristeza.png" alt="Imagen No respuesta">
+  </div>
+
+  <script>
+    function showYesResponse() {
+      document.getElementById("response-message").textContent = "TE AMO MI ANITA PRECIOSA";
+      document.getElementById("response-message").style.color = "#e63946";
+      document.getElementById("response-message").style.fontSize = "1.5rem";
+      document.getElementById("response-message").classList.remove("hidden");
+      document.getElementById("tulips").classList.remove("hidden");
+      document.getElementById("no-response-image").classList.add("hidden");
+    }
+
+    function showNoResponse() {
+      document.getElementById("response-message").textContent = "Por no aceptarme le dire a tu mamá, me ire a llorar a solas.";
+      document.getElementById("response-message").style.color = "#d62828";
+      document.getElementById("response-message").style.fontSize = "1.5rem";
+      document.getElementById("response-message").classList.remove("hidden");
+      document.getElementById("tulips").classList.add("hidden");
+      document.getElementById("no-response-image").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
